@@ -21,14 +21,28 @@ function saveToDos() {
   localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
 }
 
+function finishToDO(event) {
+  const btn = event.target;
+  const li = btn.parentNode;
+  if (li.classList.contains("finished")) {
+    li.classList.remove("finished");
+  } else {
+    li.classList.add("finished");
+  }
+}
+
 function paintToDo(text) {
   const li = document.createElement("li");
+  const finishBtn = document.createElement("button");
   const delBtn = document.createElement("button");
   const span = document.createElement("span");
   const newId = toDos.length + 1;
+  finishBtn.innerHTML = "✅";
+  finishBtn.addEventListener("click", finishToDO);
   delBtn.innerHTML = "❌";
   delBtn.addEventListener("click", deleteToDo);
   span.innerText = text;
+  li.appendChild(finishBtn);
   li.appendChild(delBtn);
   li.appendChild(span);
   li.id = newId;

@@ -3,6 +3,43 @@ body {
   text-align: center;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 4px;
+}
+
+h1 {
+  font-size: 100px;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+}
+
+input {
+  background: none;
+  height: 30px;
+  margin-bottom: 20px;
+  font-weight: 800;
+  border: none;
+  border-bottom: 3px solid white;
+  font-size: 20px;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+}
+
+input::placeholder {
+  color: white;
+  text-shadow: 1px 1px 5px black;
+}
+
+input:focus {
+  outline: none;
+}
+
 .form,
 .greetings {
   display: none;
@@ -29,4 +66,68 @@ body {
   height: 100%;
   z-index: -1;
   animation: fadeIn 0.5s linear;
+}
+
+.weather {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather {
+  font-weight: 800;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+}
+
+.weather > div {
+  display: flex;
+  align-items: center;
+}
+
+.js-greetings {
+  color: white;
+  text-shadow: 1px 1px 5px black;
+  font-size: 24px;
+}
+
+li {
+  font-size: 24px;
+  margin-bottom: 15px;
+  overflow: auto;
+}
+
+button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+li > span {
+  color: white;
+  text-shadow: 1px 1px 5px black;
+  font-weight: 800;
+}
+
+.todo_list {
+  overflow: auto;
+  height: 250px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.finished {
+  text-decoration: line-through solid white;
+}
+.finished > span {
+  opacity: 0.33;
 }
